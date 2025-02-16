@@ -1,0 +1,60 @@
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Main {
+
+    public static void main(String[] args) {
+        openUI();
+    }
+    public static void openUI(){
+        JFrame modelpiker = new JFrame("programm store");
+        modelpiker.setSize(1000,600);
+        modelpiker.setLocation(100,150);
+        modelpiker.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        modelpiker.setDefaultLookAndFeelDecorated(true);
+
+        JButton model = new JButton();
+        model.setBounds(10,190,100,100);
+
+        String acaunt_name = new String();
+        JButton acaunt = new JButton(acaunt_name);
+        acaunt.setBounds(850,20,100,50);
+
+        modelpiker.add(acaunt);
+        modelpiker.setLayout(null);
+        modelpiker.add(model);
+        modelpiker.setVisible(true);
+
+        JFrame pasword_field = new JFrame("acaunt");
+        pasword_field.setSize(300,200);
+        pasword_field.setLocation(100,150);
+        pasword_field.setDefaultLookAndFeelDecorated(true);
+
+        acaunt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pasword_field.setVisible(true);
+            }
+        });
+        JTextField username = new JTextField();
+        username.setBounds(120,100,50,25);
+
+        JPasswordField admin = new JPasswordField(97648);
+        admin.setBounds(170,100,50,25);
+
+        JLabel paswordadmin = new JLabel("admin");
+        paswordadmin.setBounds(170,70,50,25);
+
+        JButton adminin = new JButton("admin sign in");
+        adminin.setBounds(170,140,140,25);
+
+
+        pasword_field.add(adminin);
+        pasword_field.add(paswordadmin);
+        pasword_field.add(admin);
+        pasword_field.add(username);
+    }
+
+}
